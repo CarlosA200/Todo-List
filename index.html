@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="icon" href="./images/head.jpg">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+    <body>
+        
+        <div id="login-container">
+            <form id="login-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+                <div class="buttons">
+                    <button type="submit" id="login-button">Iniciar Sesión</button>
+                    <button type="button" id="cancel-button">Cancelar</button>
+                </div>
+            </form>
+            <div id="user-selection">
+                <h2>Selecciona un usuario:</h2>
+                <div class="user" id="user1" data-user-id="0">Carlos</div>
+                <div class="user" id="user2" data-user-id="1">Angela</div>
+                <div class="user" id="user3" data-user-id="2">Dany</div>
+            </div>
+        </div>
+    
+        <div id="page-content" style="display: none;">
+            <div class="pc-content">
+                    <div class="header">
+                        <div class="titulo-contador">
+                            <h1>Todo List</h1>
+                            <div class="contador">
+                                <p>Totales: <span id="tareas-total">0</span></p>
+                                <p>Completadas: <span id="tareas-completas">0</span></p>
+                                <p>Pendientes: <span id="tareas-incompletas">0</span></p>
+                            </div>
+                            <div class="buscador">
+                                <input type="search" class="in-busqueda" placeholder="Buscar Tareas">
+                                <button type="submit" class="boton-busqueda">Buscar</button>
+                                <button class="sesion" onclick="location.reload()">Cerrar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="container">
+                        <div id="lista-tareas-container">
+                            <ul id="lista-tareas">
+                            </ul>
+                        </div>
+                        
+                    <div class="boton-agregar-tarea">
+                        <div id="tarea-form">
+                                <input type="text" id="tareaInput" placeholder="Agregar nueva Tarea" required>
+                            <div id="botones-container">
+                                <button class="btn-in" type="button" onclick="cancelForm()">Cancelar</button>
+                                <button class="btn-in" type="button" onclick="addTarea()">Agregar</button>
+                            </div>
+                        </div>
+                        <button id="añadir-tarea" onclick="toggleForm()">&#43;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+    
+</html>
+

@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
+
+/*COLORES PARA USAR EN CADA USER*/
+
+/* Carlos*/
+.user1-bg {
+    --color-top1: rgba(247, 212, 192, 1);
+    --color-top2: rgba(255, 220, 200, 1);
+    --color-mid: rgba(255, 126, 74, 1);
+    --color-bottom2: rgba(202, 40, 61, 1);
+    --color-bottom1: rgba(45, 17, 42, 1);
+    background-image: url("./images/usuario1D.jpg");
+}
+
+/* Angela*/
+.user2-bg {
+    --color-top1: rgba(192, 212, 247, 1);
+    --color-top2: rgba(200, 220, 255, 1);
+    --color-mid: rgb(255, 255, 255);
+    --color-bottom2: rgb(168, 127, 44);
+    --color-bottom1: rgb(168, 127, 44);
+    background-image: url("./images/usuario2D.jpg");
+}
+
+/* Dany*/
+.user3-bg {
+    --color-top1: rgba(111, 172, 220, 1);
+    --color-top2: rgba(200, 255, 220, 1);
+    --color-mid: rgba(74, 255, 126, 1);
+    --color-bottom2: rgba(73, 142, 207, 1);
+    --color-bottom1: rgba(2, 6, 10, 1);
+    background-image: url("./images/usuario3D.jpg");
+}
+
+
+
+body {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+    overflow: hidden;
+    height: auto
+}
+
+/* Estilos para el formulario de inicio de sesión */
+#login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("./images/login.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#login-form {
+    background-color: #00000045;
+    backdrop-filter: blur(5px);
+    border: 1px solid;
+    padding: 4%;
+    border-radius: 10px;
+    display: none;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#login-form input {
+    display: block;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    background-color: #00000000;
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#login-button {
+    font-size: 20px;
+    border-color: #0074f9bd;
+    border-radius: 20px;
+}
+
+#login-button:hover {
+    color: #ffffff;
+    background-color: #0074f900;
+}
+
+#cancel-button {
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #ff0000;
+}
+
+#cancel-button:hover {
+    color: #ff0000;
+    background-color: #ff000000;
+}
+
+#user-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 4%;
+    background-color: #00000045;
+    backdrop-filter: blur(5px);
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.user {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pc-content {
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 5px;
+}
+
+.header,
+.titulo-contador {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    transition: 0.5s;
+    background-color: var(--color-bottom1);
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-top1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 0 15px;
+}
+
+.contador {
+    display: flex;
+    margin: 0 0 0 auto;
+}
+
+.contador p {
+    font-size: 1.2rem;
+    margin: 0 22px 0 0;
+    color: var(--color-top1);
+}
+
+
+.buscador {
+    display: flex;
+}
+
+.in-busqueda {
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin: 0 15px 0 0;
+    height: 30px;
+    cursor: pointer;
+}
+
+.in-busqueda:focus {
+    outline: none;
+}
+
+.boton-busqueda {
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+}
+
+.boton-busqueda:hover {
+    color: var(--color-bottom1);
+}
+
+.boton-busqueda:active {
+    transform: scale(1.05);
+}
+
+.sesion {
+    margin-right: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 100%;
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+
+#lista-tareas-container {
+    margin-left: 50px;
+    position: absolute;
+    top: 23%;
+    height: 53vh;
+    width: 50vw;
+    overflow-y: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid var(--color-bottom1);
+    backdrop-filter: blur(10px);
+}
+
+#lista-tareas-container::-webkit-scrollbar {
+    width: 15px;
+}
+
+#lista-tareas-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#lista-tareas-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-top1);
+    border-radius: 10px;
+}
+
+
+
+#lista-tareas {
+    width: 100%;
+    height: 80%;
+    margin: 1rem 0;
+    padding: 30px;
+    padding-top: 10px;
+}
+
+
+li {
+    width: 100%;
+    height: 3vw;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: var(--color-bottom1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    color: var(--color-top1);
+    list-style: none;
+    text-align: left;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
+
+
+li .fa-check {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+li .fa-trash {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+.boton-agregar-tarea {
+    font-size: 24px;
+    padding: 12px 24px;
+    align-items: end;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#tarea-form {
+    bottom: 15%;
+    right: 10%;
+    position: fixed;
+    display: none;
+}
+
+#tareaInput {
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    height: 57.3vh;
+    width: 20vw;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid var(--color-bottom1);
+    backdrop-filter: blur(5px);
+    outline-color: var(--color-bottom1);
+    color: grey;
+}
+
+#añadir-tarea {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-bottom2);
+    color: var(--color-top1);
+    font-size: 40px;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+#añadir-tarea:hover {
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+#botones-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20px;
+    margin: 10px 0 0 10px;
+}
+
+.btn-in {
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 10px 0 6px;
+    width: 9vw;
+    height: 3vh;
+    cursor: pointer;
+}
+
+.btn-in:hover {
+    color: var(--color-bottom1);
+    font-weight: bold;
+    transform: scale(1.0);
+}
+
+.btn-in:active {
+    transform: scale(1.05);
+}
+
+@media (max-width: 981px) {
+
+.header .titulo-contador {
+    margin: 5px 0 0 5px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+.contador p {
+    font-size: 15px;
+}
+
+.sesion {
+    margin: 0 12px 0 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #ff0000;
+    }
+}
+
+@media (max-width: 768px) {
+
+/* Carlos*/
+.user1-bg {
+    background-image: url("./images/usuario1P.jpg");
+}
+
+/* Angela*/
+.user2-bg {
+    background-image: url("./images/usuario2P.jpg");
+}
+
+/* Dany*/
+.user3-bg {
+    background-image: url("./images/usuario3P.jpg");
+}
+
+
+body {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+.pc-content {
+    height: auto;
+    margin: 0 auto;
+}
+
+.header,
+.titulo-contador {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    flex-direction: column;
+    transition: 0.5s;
+    background-color: var(--color-bottom1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-top1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+        margin: 15px auto 10px auto;
+    }
+
+    .contador {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .contador p {
+        font-size: 4vw;
+        margin: 0 12px 17px 5px;
+        color: var(--color-top1);
+    }
+
+    .buscador {
+        display: flex;
+        justify-content: center;
+    }
+
+    .in-busqueda {
+        font-size: 1rem;
+        text-align: center;
+        color: var(--color-bottom1);
+        border-radius: 10px;
+        border: none;
+        padding: 0px;
+        margin: 0 7px 0 0;
+        height: 20px;
+    }
+
+    .in-busqueda::placeholder {
+        color: var(--color-bottom1);
+    }
+
+    .in-busqueda:focus {
+        background-color: var(--color-mid);
+        outline: none;
+    }
+
+    .boton-busqueda {
+        font-size: 1rem;
+        border-radius: 10px;
+        border: none;
+        color: var(--color-bottom1);
+        margin: 0;
+    }
+
+    .boton-busqueda:hover {
+        background-color: var(--color-mid);
+        color: var(--color-bottom1);
+    }
+
+    .sesion {
+        margin: 0 12px 0 12px;
+        border-radius: 10px;
+        border: none;
+        font-size: 12px;
+        background-color: #ffffff;
+        color: #ff0000;
+    }
+
+    .boton-busqueda:active {
+        transform: scale(1.05);
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 5px;
+    }
+
+
+    #lista-tareas-container {
+        margin: 30px 10px 10px 10px;
+        position: static;
+        height: 18rem;
+        width: auto;
+        overflow-y: auto;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid var(--color-bottom1);
+        backdrop-filter: blur(10px);
+    }
+
+    #lista-tareas-container::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    #lista-tareas-container::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    #lista-tareas-container::-webkit-scrollbar-thumb {
+        background-color: var(--color-top1);
+        border-radius: 10px;
+    }
+
+
+#lista-tareas {
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+}
+
+li {
+    width: 100%;
+    font-size: 4vw;
+    height: auto;
+    background-color: var(--color-bottom1);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: var(--color-top1);
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    }
+
+li .fa-check {
+        margin-left: auto;
+    margin-right: 8px;
+    font-size: 15px;
+}
+
+li .fa-trash {
+    margin-right: 2px;
+    font-size: 15px;
+}
+
+.boton-agregar-tarea {
+    font-size: 24px;
+    padding: 2px 1px;
+    align-items: end;
+    display: flex;
+    position: fixed;
+    bottom: 12px;
+    right: 15px;
+}
+
+#tarea-form {
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0%;
+    right: 10%;
+    position: fixed;
+    display: none;
+}
+
+#tareaInput {
+    height: 5vh;
+    width: 39vw;
+    font-size: 4vw;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid var(--color-top2);
+    backdrop-filter: blur(5px);
+        outline-color: var(--color-bottom1);
+}
+
+#añadir-tarea {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    border-radius: 50%;
+    border-radius: 50%;
+    background-color: var(--color-bottom2);
+    color: var(--color-top1);
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+#añadir-tarea:hover {
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+#botones-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 21px;
+    margin: 4px 28px 0 28px;
+}
+
+.btn-in {
+    width: 18vw;
+    height: 4vh;
+    font-size: 3.5vw;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 2px 0 2px;
+    color: #000000;
+}
+
+.btn-in:hover {
+    background-color: var(--color-mid);
+    color: var(--color-bottom1);
+}
+
+.btn-in:active {
+    transform: scale(1.05);
+}
+
+}
